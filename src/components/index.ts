@@ -1,0 +1,1 @@
+export { default as MaBtn } from './ma-btn.vue';
