@@ -1,21 +1,22 @@
 {
-  "name": "machi-ui",
   "private": false,
+  "name": "machi-ui",
   "version": "0.0.1",
   "type": "module",
-  "main": "dist/machi-ui.umd.js",
-  "module": "dist/machi-ui.es.js",
-  "types": "dist/index.d.ts",
-  "files": ["dist"],
-  "peerDependencies": {
-    "tailwindcss": "^3.0.0",
-    "vue": "^3.0.0"
-  },
+  "description": "UI Component Library with TailwindCSS",
   "scripts": {
     "build": "vue-tsc -b && vite build",
     "dev": "vite",
     "lint": "oxlint",
     "preview": "vite preview"
+  },
+  "main": "dist/machi-ui.umd.cjs",
+  "module": "dist/machi-ui.js",
+  "types": "dist/index.d.ts",
+  "files": ["dist"],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   },
   "dependencies": {
     "pinia": "^2.3.0",
@@ -35,5 +36,40 @@
     "vite": "^6.0.3",
     "vite-plugin-vue-devtools": "^7.6.8",
     "vue-tsc": "^2.1.10"
+  },
+  "peerDependencies": {
+    "tailwindcss": "^3.0.0",
+    "vue": "^3.0.0"
+  },
+  "keywords": [
+    "vue",
+    "components",
+    "ui-library",
+    "typescript",
+    "tailwindcss"
+  ],
+  "author": {
+    "name": "陳天一",
+    "email": "zxtw17985321@gmail.com",
+    "url": "https://github.com/terry90918"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/terry90918/web-machi-ui#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/terry90918/web-machi-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/terry90918/web-machi-ui/issues"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/machi-ui.js",
+      "require": "./dist/machi-ui.umd.cjs"
+    }
   }
 }
