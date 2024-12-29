@@ -13,7 +13,12 @@
   "main": "dist/machi-ui.umd.cjs",
   "module": "dist/machi-ui.js",
   "types": "dist/index.d.ts",
-  "files": ["dist"],
+  "files": [
+    "dist/machi-components.cjs",
+    "dist/machi-components.js",
+    "dist/machi-plugin.cjs",
+    "dist/machi-plugin.js"
+  ],
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
