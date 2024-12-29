@@ -22,9 +22,9 @@
 </template>
 
 <script setup lang="ts">
-import MaBtn from '../components/ma-btn.vue'
+import MaBtn, { type MaBtnProps } from '../components/ma-btn.vue'
 
-type ButtonStatus = 'default' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error'
+type ButtonStatus = MaBtnProps['status']
 
 const btnTypes: { value: ButtonStatus; label: string }[] = [
   { value: 'default', label: 'Default' },
