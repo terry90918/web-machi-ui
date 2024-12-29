@@ -70,6 +70,10 @@
     ".": {
       "import": "./dist/machi-ui.js",
       "require": "./dist/machi-ui.umd.cjs"
+    },
+    "./plugin": {
+      "import": "./dist/plugin.js",
+      "require": "./dist/plugin.umd.cjs"
     }
   }
 }

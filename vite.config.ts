@@ -7,7 +7,10 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 export default defineConfig({
   build: {
     lib: {
-      entry: fileURLToPath(new URL('./src/components/index.ts', import.meta.url)),
+      entry: {
+        'machi-ui': fileURLToPath(new URL('./src/components/index.ts', import.meta.url)),
+        'plugin': fileURLToPath(new URL('./src/plugin/index.ts', import.meta.url)),
+      },
       name: 'MachiUI',
       fileName: (format) => `machi-ui.${format}.js`,
       formats: ['es', 'umd'],

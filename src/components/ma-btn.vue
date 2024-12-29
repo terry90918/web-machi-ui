@@ -11,8 +11,12 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed } from 'vue';
-import type { PropType } from 'vue';
+import { defineComponent, computed, type PropType } from 'vue';
+
+export interface MaBtnProps {
+  disabled?: boolean;
+  status?: 'default' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error';
+}
 
 export default defineComponent({
   name: 'MaBtn',
@@ -22,8 +26,8 @@ export default defineComponent({
       default: false,
     },
     status: {
-      type: String as PropType<'success' | 'error' | 'warning' | 'info'>,
-      default: 'info',
+      type: String as PropType<'default' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error'>,
+      default: 'default',
     },
   },
   emits: ['onPress', 'onFocus', 'onBlur'],
@@ -39,10 +43,14 @@ export default defineComponent({
         'px-4 py-2 rounded',
         props.disabled ? 'opacity-50 cursor-not-allowed' : 'hover:bg-opacity-75',
         {
-          'bg-green-500 text-white': props.status === 'success',
-          'bg-red-500 text-white': props.status === 'error',
-          'bg-yellow-500 text-white': props.status === 'warning',
-          'bg-blue-500 text-white': props.status === 'info',
+          'bg-gray-200': props.status === 'default',
+          'bg-primary text-white': props.status === 'primary',
+          'bg-secondary text-white': props.status === 'secondary',
+          'bg-accent text-white': props.status === 'accent',
+          'bg-info text-white': props.status === 'info',
+          'bg-success text-white': props.status === 'success',
+          'bg-warning text-white': props.status === 'warning',
+          'bg-error text-white': props.status === 'error',
         },
       ];
     });
