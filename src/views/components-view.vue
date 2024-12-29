@@ -22,10 +22,8 @@
 </template>
 
 <script setup lang="ts">
-import MaBtn, { type MaBtnProps } from '../components/ma-btn.vue'
-
-type ButtonStatus = MaBtnProps['status']
-
+import MaBtn, { type MaBtnProps } from '../components/ma-btn.vue';
+type ButtonStatus = MaBtnProps['status'];
 const btnTypes: { value: ButtonStatus; label: string }[] = [
   { value: 'default', label: 'Default' },
   { value: 'primary', label: 'Primary' },
@@ -35,5 +33,5 @@ const btnTypes: { value: ButtonStatus; label: string }[] = [
   { value: 'success', label: 'Success' },
   { value: 'warning', label: 'Warning' },
   { value: 'error', label: 'Error' }
-]
+];
 </script>
