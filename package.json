@@ -1,7 +1,7 @@
 {
   "private": false,
   "name": "machi-cat-ui",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "description": "UI Component Library with TailwindCSS",
   "scripts": {
@@ -10,14 +10,15 @@
     "lint": "oxlint",
     "preview": "vite preview"
   },
-  "main": "dist/machi-ui.umd.cjs",
-  "module": "dist/machi-ui.js",
+  "main": "dist/machi-components.cjs",
+  "module": "dist/machi-components.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist/machi-components.cjs",
     "dist/machi-components.js",
     "dist/machi-plugin.cjs",
-    "dist/machi-plugin.js"
+    "dist/machi-plugin.js",
+    "dist/index.d.ts"
   ],
   "publishConfig": {
     "access": "public",
@@ -39,6 +40,7 @@
     "tailwindcss": "^3.4.17",
     "typescript": "~5.6.2",
     "vite": "^6.0.3",
+    "vite-plugin-dts": "^4.4.0",
     "vite-plugin-vue-devtools": "^7.6.8",
     "vue-tsc": "^2.1.10"
   },
@@ -73,12 +75,12 @@
   },
   "exports": {
     ".": {
-      "import": "./dist/machi-ui.js",
-      "require": "./dist/machi-ui.umd.cjs"
+      "import": "./dist/machi-components.js",
+      "require": "./dist/machi-components.cjs"
     },
     "./plugin": {
-      "import": "./dist/plugin.js",
-      "require": "./dist/plugin.umd.cjs"
+      "import": "./dist/machi-plugin.js",
+      "require": "./dist/machi-plugin.umd.cjs"
     }
   }
 }
