@@ -1,4 +1,4 @@
-import { fileURLToPath, URL } from 'node:url'
+import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
@@ -8,12 +8,10 @@ export default defineConfig({
   build: {
     lib: {
       entry: {
-        'machi-ui': fileURLToPath(new URL('./src/components/index.ts', import.meta.url)),
-        'plugin': fileURLToPath(new URL('./src/plugin/index.ts', import.meta.url)),
+        'machi-components': resolve(__dirname, 'src/components/index.ts'),
+        'machi-plugin': resolve(__dirname, 'src/plugin/index.ts'),
       },
-      name: 'MachiUI',
-      fileName: (format) => `machi-ui.${format}.js`,
-      formats: ['es', 'umd'],
+      name: 'MachiCatUI',
     },
     rollupOptions: {
       external: ['vue'],
@@ -31,7 +29,7 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
+      '@': resolve(__dirname, 'src'),
     },
   },
 })

@@ -1,0 +1,12 @@
+node_modules/
+src/
+tests/
+.git/
+.github/
+.vscode/
+*.log
+*.lock
+.DS_Store
+.env*
+.tsconfig*
+docs/
