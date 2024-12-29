@@ -16,9 +16,10 @@
   "files": [
     "dist/machi-components.cjs",
     "dist/machi-components.js",
+    "dist/machi-components.d.ts",
     "dist/machi-plugin.cjs",
     "dist/machi-plugin.js",
-    "dist/index.d.ts"
+    "dist/machi-plugin.d.ts"
   ],
   "publishConfig": {
     "access": "public",
